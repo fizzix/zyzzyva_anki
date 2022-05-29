@@ -18,7 +18,7 @@ for line in data:
     #print line
 
     linesplit = line.split()
-    for i in xrange(len(linesplit)):
+    for i in range(len(linesplit)):
         #Only care about stuff that is all uppercase
         seg = linesplit[i]
         if not seg.isupper():

@@ -46,7 +46,7 @@ class wordset:
         ansstr = ''
         
         # reconstruct the string
-        for segnum in xrange(1,len(temp)-1):
+        for segnum in range(1,len(temp)-1):
             if temp[segnum] == self.alphagram or temp[segnum] == self.alphagram+'*' or temp[segnum] == self.alphagram+'#':
                 temp[segnum] = '-'
             ansstr += temp[segnum]
@@ -64,7 +64,7 @@ class wordset:
         if len(self.answers) == 1:
             ws += self.answers[0]
         else:
-            for i in xrange(len(self.answers) - 1):
+            for i in range(len(self.answers) - 1):
                
                     
                 ws += self.answers[i]
