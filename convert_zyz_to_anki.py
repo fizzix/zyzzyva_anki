@@ -4,10 +4,6 @@ import string
 filename = '9s_all_raw_defsym.txt'
 writefile = '9s_all_anki.txt'
 
-
-lines = open(filename).readlines()
-wf = open(writefile, 'w')
-
 wordlist = []
 playlist = []
 
@@ -73,23 +69,29 @@ class wordset:
         ws += '\n'
         wf.write(ws)
 
-            
-word = wordset('\n')            
+def main():
+    lines = open(filename).readlines()
+    wf = open(writefile, 'w')
 
-for line in lines:
+    word = wordset('\n')            
 
-    if len(line) == 1:
-        if word.csw:
-            wordlist.append(word)
-            playlist.append(word.play)
+    for line in lines:
 
-    if line[0] == 'Q':
-        word = wordset(line)
-    if line[0] == 'A':
-        word.process_answer(line)
+        if len(line) == 1:
+            if word.csw:
+                wordlist.append(word)
+                playlist.append(word.play)
+
+        if line[0] == 'Q':
+            word = wordset(line)
+        if line[0] == 'A':
+            word.process_answer(line)
         
-#process all the data
-indices = numpy.argsort(playlist)
+    #process all the data
+    indices = numpy.argsort(playlist)
 
-for index in indices:
-    wordlist[index].write_word(wf)
+    for index in indices:
+        wordlist[index].write_word(wf)
+
+if __name__ == "__main__":
+    main()
