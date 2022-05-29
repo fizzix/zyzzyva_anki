@@ -41,3 +41,17 @@ In Anki on the computer, you will go to File -> Import.  You will then need to s
 edit_raw_defs.py is an extra file that will edit the definitions of a zyzzyva output so that all the words in the definition have the correct symbol (#).  That is, it will read through the definitions of a word, extract all the words with only capital letters, and check them against a CSW list.  That is it will mark the following definition as such.  This acts on the output from zyzzyva, so it needs to be done before you've converted to Anki, if you want it.
 
     GALLABEAH# s# (Arabic) a cloak with a hood and wide sleeves, also DJELLABA, DJELLABAH, GALABEA#, GALABEAH#, GALABIA, GALABIAH#, GALABIEH, GALABIYA, GALABIYAH, GALLABEA#, GALLABIA#, GALLABIAH#, GALLABIEH#, GALLABIYA#, GALLABIYAH#, GALLABIYEH#, JELAB#, JELLABA, JELLABAH#
+    
+To run this file you'll need to generate a full list of the CSW words with the proper lexicon symbols.  It should be a simple word list that looks something like this
+
+    ...
+    ABAMP
+    ABAMPERE
+    ABAMPERES
+    ABAMPS
+    ABAND#
+    ABANDED#
+    ABANDING#
+    ...
+    
+ This can be done with Zyzzyva provided you have an up to date copy of the CSW and NWL word lists and a powerful enough computer (sometimes zyzzyva can crash when trying to make long lists like this).
